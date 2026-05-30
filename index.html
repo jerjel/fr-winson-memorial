@@ -438,14 +438,13 @@
   <!-- ══════════════════════════════════════════════════════════ -->
   <!--  SCRIPTS                                                  -->
   <!-- ══════════════════════════════════════════════════════════ -->
+
+  <!-- Swiper & AOS (loaded as regular scripts before module) -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <!-- <script>
-    // Set your Google Apps Script URL
-    window.GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzaqTGGt16EaDKlSCcKwv8JFfz__KQmqf5ZXJ4tfpoaxHA_OLJlQ_fpDYE00f66TS6AVA/exec';
-  </script> -->
-  <!-- <script src="js/local_photos.js"></script> -->
-  <script src="js/main.js"></script>
-  
+
+  <!-- Main app — type="module" enables Firebase ES module imports -->
+  <script type="module" src="js/main.js"></script>
+
 </body>
 </html>
