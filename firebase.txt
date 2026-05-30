@@ -1,0 +1,135 @@
+Here is the step-by-step guide to setting up a free Firebase database for the memorial site. It’s very straightforward!
+
+### Step 1: Create the Firebase Project
+1. Go to the [Firebase Console](https://console.firebase.google.com/) and log in with your Google account.
+2. Click the **"Create a project"** (or "Add project") button.
+3. Enter a project name (e.g., `winson-memorial`).
+4. Click **Continue**.
+5. It will ask if you want to enable Google Analytics. You can turn this **off** to keep things simple.
+6. Click **Create Project**, wait a few seconds for it to finish, and then click **Continue**.
+
+### Step 2: Set Up the Database (Firestore)
+1. On the left sidebar menu of your new project, click on **Build**, then select **Firestore Database**.
+2. Click the **"Create database"** button.
+3. A popup will ask about Security Rules. Select **"Start in test mode"** (this allows our website to read and write data easily while we build it. I can help you secure it later).
+4. Click **Next**.
+5. It will ask for a location. You can leave the default option and click **Enable**. 
+*(Firebase is now setting up your database).*
+
+### Step 3: Register Your Website and Get the Keys
+1. In the left sidebar, click the **Gear Icon ⚙️** (Project Overview) at the top left, and select **Project settings**.
+2. Scroll down to the **"Your apps"** section and click the `</>` icon (which stands for Web app).
+3. Give your app a nickname (e.g., `Memorial Site`).
+4. You do **not** need to check the "Firebase Hosting" box (since we are using GitHub Pages).
+5. Click **Register app**.
+6. Firebase will now show you a block of code under **"Add Firebase SDK"**. Look for the section that looks something like this:
+
+```javascript
+const firebaseConfig = {
+  apiKey: "AIzaSyB-xxxxxxxxxxxxxxxxxxxx",
+  authDomain: "winson-memorial.firebaseapp.com",
+  projectId: "winson-memorial",
+  storageBucket: "winson-memorial.appspot.com",
+  messagingSenderId: "1234567890",
+  appId: "1:1234567890:web:abcdef123456"
+};
+```
+
+### Next Steps
+Simply **copy that `firebaseConfig` block** and paste it here in our chat! 
+
+Once you give me those keys, I will rewrite our `js/main.js` and `index.html` to connect to your database. I'll make sure the candle count increments globally and new tributes are saved and displayed for all visitors instantly.
+
+## Automatically created below
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.17.0/firebase-app.js";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "[GCP_API_KEY]",
+  authDomain: "memorial-10299.firebaseapp.com",
+  projectId: "memorial-10299",
+  storageBucket: "memorial-10299.firebasestorage.app",
+  messagingSenderId: "1051809498570",
+  appId: "1:1051809498570:web:a562c99091552e9e749678"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+-------------------------------------------------------------------
+Edited firebase.txt
+Viewed index.html:1-25
+
+Here is the complete guide to uploading your memorial site to GitHub Pages and connecting your custom domain.
+
+### Step 1: Push the Code to GitHub
+First, we need to create a repository on GitHub and upload the files.
+
+1. Log in to [GitHub](https://github.com/) and click the **"+"** icon in the top right corner, then select **New repository**.
+2. Name the repository (e.g., `fr-winson-memorial`).
+3. Set the repository to **Public** (GitHub Pages requires public repos for free accounts).
+4. Do **not** check the boxes for README, .gitignore, or license. Just click **Create repository**.
+
+Since your files are already on your computer, you can run these commands in your terminal (inside the `memorial-fr-winson` folder). *If you'd like, I can run these local commands for you! Just let me know.*
+
+```bash
+# Initialize the git repository
+git init
+
+# Add all the files
+git add .
+
+# Commit the files
+git commit -m "Initial commit for Fr. Winson Memorial"
+
+# Change the main branch name to 'main'
+git branch -M main
+
+# Link it to your new GitHub repository (REPLACE with your actual GitHub URL)
+git remote add origin https://github.com/YOUR_USERNAME/fr-winson-memorial.git
+
+# Push the code to GitHub
+git push -u origin main
+```
+
+### Step 2: Enable GitHub Pages
+Now that your code is on GitHub, we turn on the hosting.
+
+1. On your GitHub repository page, click the **Settings** tab (the gear icon near the top right).
+2. On the left sidebar, scroll down and click **Pages**.
+3. Under the **Build and deployment** section:
+   - For **Source**, select **Deploy from a branch**.
+   - Under **Branch**, select `main` (or `master`) from the dropdown, and leave the folder as `/ (root)`.
+   - Click **Save**.
+4. GitHub will now build your site. In about 1–2 minutes, it will display a message at the top saying: *"Your site is live at https://yourusername.github.io/fr-winson-memorial/"*. 
+   *(Your site is now publicly on the internet!)*
+
+### Step 3: Configure Your Custom Domain (e.g., www.frwinson.com)
+To use a custom domain that you purchased (from GoDaddy, Namecheap, Google Domains, etc.), follow these steps:
+
+**Part A: Tell GitHub about your domain**
+1. Go back to the **Pages** section in your GitHub repository Settings.
+2. Scroll down to the **Custom domain** section.
+3. Type your custom domain (e.g., `frwinson.com` or `www.frwinson.com`) into the box and click **Save**.
+4. GitHub will automatically create a file called `CNAME` in your repository. It will say "DNS check in progress" (this is normal).
+5. Check the box that says **Enforce HTTPS** (it might take an hour or two before you can check this box—it gives your site the secure padlock icon).
+
+**Part B: Tell your Domain Registrar about GitHub**
+Log in to the company where you bought your domain (GoDaddy, Namecheap, etc.), go to your **DNS Settings / Manage DNS**, and add these records:
+
+1. **Add A Records (Points the main domain to GitHub's servers):**
+   Create four separate **"A" Records** with the Host set to `@` (or leave blank) and point them to these four GitHub IP addresses:
+   - `185.199.108.153`
+   - `185.199.109.153`
+   - `185.199.110.153`
+   - `185.199.111.153`
+
+2. **Add a CNAME Record (Points the 'www' version to your GitHub site):**
+   Create a **"CNAME" Record** with the Host set to `www` and point it to your GitHub pages URL: `YOUR_USERNAME.github.io`.
+
+**That's it!**
+DNS changes can sometimes take anywhere from 15 minutes to 24 hours to update globally. Once it updates, anyone typing your custom domain will see the beautiful memorial site.
+
+Would you like me to initialize the local Git repository for you right now so it's ready to push?

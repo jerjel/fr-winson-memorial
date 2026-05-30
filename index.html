@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A loving memorial for Rev. Fr. Winson Anthony Parekkat (December 26, 1939 – May 25, 2026). A shepherd, a servant, a soul of grace." />
+  <meta property="og:title" content="In Loving Memory — Fr. Winson Anthony Parekkat" />
+  <meta property="og:description" content="A loving memorial celebrating the life and legacy of Rev. Fr. Winson Anthony Parekkat." />
+  <title>In Loving Memory — Fr. Winson Anthony Parekkat</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!--  NAVIGATION                                               -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <nav id="navbar" class="navbar">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <span class="cross-icon">✝</span>
+        <span>Fr. Winson Parekkat</span>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">His Life</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#candle">Light a Candle</a></li>
+        <li><a href="#tributes">Tributes</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!--  HERO SECTION                                             -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <section id="home" class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+
+    <!-- Floating particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Animated Candle (left) -->
+    <div class="hero-candle-wrap" aria-hidden="true">
+      <div class="candle">
+        <div class="flame-wrap">
+          <div class="flame"></div>
+          <div class="flame-shadow"></div>
+          <div class="glow"></div>
+        </div>
+        <div class="wick"></div>
+        <div class="candle-body">
+          <div class="drip drip1"></div>
+          <div class="drip drip2"></div>
+        </div>
+        <div class="candle-base"></div>
+      </div>
+    </div>
+
+    <!-- Hero content -->
+    <div class="hero-content">
+      <p class="hero-pre">In Loving Memory of</p>
+
+      <div class="portrait-frame">
+        <div class="portrait-ring"></div>
+        <div class="portrait-inner" id="heroPortrait">
+          <!-- Replace with: <img src="images/hero/portrait.jpg" alt="Fr. Winson Anthony Parekkat" /> -->
+          <div class="portrait-placeholder">
+            <span class="cross-large">✝</span>
+            <p>Add portrait photo<br/><small>images/hero/portrait.jpg</small></p>
+          </div>
+        </div>
+        <div class="portrait-laurel left-laurel">❧</div>
+        <div class="portrait-laurel right-laurel">❧</div>
+      </div>
+
+      <h1 class="hero-name">
+        <span class="title-prefix">Rev. Fr.</span>
+        Winson Anthony Parekkat
+      </h1>
+
+      <div class="hero-dates">
+        <span class="date">December 26, 1939</span>
+        <span class="date-separator">✦</span>
+        <span class="date">May 25, 2026</span>
+      </div>
+
+      <p class="hero-age">86 Years of Devoted Service to God and Humanity</p>
+
+      <blockquote class="hero-quote">
+        <p>"I have fought the good fight, I have finished the race,<br/>I have kept the faith."</p>
+        <cite>— 2 Timothy 4:7</cite>
+      </blockquote>
+
+      <a href="#about" class="scroll-btn" aria-label="Scroll to biography">
+        <span>Discover His Story</span>
+        <div class="scroll-arrow"></div>
+      </a>
+    </div>
+
+    <!-- Animated Candle (right) -->
+    <div class="hero-candle-wrap right" aria-hidden="true">
+      <div class="candle">
+        <div class="flame-wrap">
+          <div class="flame"></div>
+          <div class="flame-shadow"></div>
+          <div class="glow"></div>
+        </div>
+        <div class="wick"></div>
+        <div class="candle-body">
+          <div class="drip drip1"></div>
+          <div class="drip drip2"></div>
+        </div>
+        <div class="candle-base"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!--  ABOUT / BIOGRAPHY                                        -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <section id="about" class="section biography-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="gold-line"></div>
+        <span class="section-tag">✝ His Story</span>
+        <h2 class="section-title">A Life Beautifully Lived</h2>
+        <div class="gold-line"></div>
+      </div>
+
+      <div class="bio-grid">
+        <!-- Biography text -->
+        <div class="bio-text" data-aos="fade-right">
+          <p class="bio-lead">
+            Rev. Fr. Winson Anthony Parekkat was a man of profound faith, gentle wisdom, and unwavering devotion—a shepherd who gave his entire life in service to God and the community he so deeply loved.
+          </p>
+          <p>
+            Born on the feast of St. Stephen, December 26, 1939, Fr. Winson felt the call to priesthood from an early age. His ordination marked the beginning of a ministry that would span decades, touch countless lives, and leave an indelible mark on all who knew him.
+          </p>
+          <p>
+            Throughout his 86 years, he embodied the Gospel not only in word but in deed—visiting the sick, comforting the grieving, guiding the young, and always, always keeping his door open for whoever needed him most.
+          </p>
+          <p>
+            On May 25, 2026, Fr. Winson peacefully passed into eternal life, completing his earthly journey with the same grace and quiet dignity with which he had lived it. He is gone from our sight, but never from our hearts.
+          </p>
+        </div>
+
+        <!-- Timeline -->
+        <div class="timeline" data-aos="fade-left">
+          <h3 class="timeline-title">Life Journey</h3>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">Dec 26, 1939</span>
+              <p>Born into the Parekkat family, a day of celebration and hope.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">Early Years</span>
+              <p>Discerned his calling, began his formation and seminary studies.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">Ordination</span>
+              <p>Ordained to the Holy Priesthood — a solemn and joyful milestone.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">Decades of Service</span>
+              <p>Served parishes, communities and missions with tireless dedication.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">Golden Years</span>
+              <p>Continued ministry even in later years, a beacon of faith and serenity.</p>
+            </div>
+          </div>
+          <div class="timeline-item last">
+            <div class="timeline-dot gold"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">May 25, 2026</span>
+              <p>Entered into eternal rest. His legacy lives on in every heart he touched.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!--  GALLERY / SLIDESHOWS                                     -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <section id="gallery" class="section gallery-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="gold-line"></div>
+        <span class="section-tag">✦ Memories</span>
+        <h2 class="section-title">A Life in Pictures</h2>
+        <div class="gold-line"></div>
+        <p class="section-sub">Each gallery below captures a different chapter of his beautiful journey.</p>
+      </div>
+
+      <!-- ── Slideshow 1: Early Life & Youth ── -->
+      <div class="slideshow-block" data-aos="fade-up">
+        <div class="slideshow-header">
+          <span class="slideshow-icon">🌱</span>
+          <h3 class="slideshow-title">Early Life &amp; Youth</h3>
+          <p class="slideshow-sub">Childhood, family moments, and the years that shaped him.</p>
+          <div class="folder-tag">📁 Add photos to: <code>images/early-life/</code></div>
+        </div>
+        <div class="swiper" id="swiper-early-life">
+          <div class="swiper-wrapper" id="slides-early-life">
+            <!-- JS will populate real images; placeholders shown here -->
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+
+      <!-- ── Slideshow 2: Priesthood & Ordination ── -->
+      <div class="slideshow-block" data-aos="fade-up">
+        <div class="slideshow-header">
+          <span class="slideshow-icon">✝</span>
+          <h3 class="slideshow-title">Priesthood &amp; Ordination</h3>
+          <p class="slideshow-sub">The sacred call answered — ordination, first Mass, and ministerial milestones.</p>
+          <div class="folder-tag">📁 Add photos to: <code>images/priesthood/</code></div>
+        </div>
+        <div class="swiper" id="swiper-priesthood">
+          <div class="swiper-wrapper" id="slides-priesthood"></div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+
+      <!-- ── Slideshow 3: Ministry & Service ── -->
+      <div class="slideshow-block" data-aos="fade-up">
+        <div class="slideshow-header">
+          <span class="slideshow-icon">🕊️</span>
+          <h3 class="slideshow-title">Ministry &amp; Service</h3>
+          <p class="slideshow-sub">Decades of devoted pastoral work, outreach, and spiritual guidance.</p>
+          <div class="folder-tag">📁 Add photos to: <code>images/ministry/</code></div>
+        </div>
+        <div class="swiper" id="swiper-ministry">
+          <div class="swiper-wrapper" id="slides-ministry"></div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+
+      <!-- ── Slideshow 4: Family & Loved Ones ── -->
+      <div class="slideshow-block" data-aos="fade-up">
+        <div class="slideshow-header">
+          <span class="slideshow-icon">❤️</span>
+          <h3 class="slideshow-title">Family &amp; Loved Ones</h3>
+          <p class="slideshow-sub">Cherished moments with those closest to his heart.</p>
+          <div class="folder-tag">📁 Add photos to: <code>images/family/</code></div>
+        </div>
+        <div class="swiper" id="swiper-family">
+          <div class="swiper-wrapper" id="slides-family"></div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+
+      <!-- ── Slideshow 5: Celebrations & Milestones ── -->
+      <div class="slideshow-block" data-aos="fade-up">
+        <div class="slideshow-header">
+          <span class="slideshow-icon">🎉</span>
+          <h3 class="slideshow-title">Celebrations &amp; Milestones</h3>
+          <p class="slideshow-sub">Jubilees, anniversaries, and joyful gatherings through the years.</p>
+          <div class="folder-tag">📁 Add photos to: <code>images/celebrations/</code></div>
+        </div>
+        <div class="swiper" id="swiper-celebrations">
+          <div class="swiper-wrapper" id="slides-celebrations"></div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+
+      <!-- ── Slideshow 6: Legacy & Final Years ── -->
+      <div class="slideshow-block" data-aos="fade-up">
+        <div class="slideshow-header">
+          <span class="slideshow-icon">🌅</span>
+          <h3 class="slideshow-title">Legacy &amp; Final Years</h3>
+          <p class="slideshow-sub">His golden years, surrounded by love, grace, and lasting impact.</p>
+          <div class="folder-tag">📁 Add photos to: <code>images/legacy/</code></div>
+        </div>
+        <div class="swiper" id="swiper-legacy">
+          <div class="swiper-wrapper" id="slides-legacy"></div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!--  SCRIPTURE BANNER                                         -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <section class="scripture-banner" data-aos="fade-in">
+    <div class="scripture-inner">
+      <div class="scripture-cross">✝</div>
+      <blockquote>
+        <p>"Blessed are those who mourn, for they shall be comforted."</p>
+        <cite>— Matthew 5:4</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!--  CANDLE LIGHTING                                          -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <section id="candle" class="section candle-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="gold-line"></div>
+        <span class="section-tag">🕯 Light a Candle</span>
+        <h2 class="section-title">Remember Him in Prayer</h2>
+        <div class="gold-line"></div>
+        <p class="section-sub">Click a candle to light it virtually — and say a prayer in his memory.</p>
+      </div>
+
+      <div class="candle-grid" id="candleGrid">
+        <!-- Candles generated by JS -->
+      </div>
+      <div class="candle-count-wrap" data-aos="fade-up">
+        <p class="candle-count">
+          <span id="litCount">0</span> candles have been lit in his memory.
+        </p>
+        <button class="btn-gold" id="lightAllBtn">Light a Candle for Fr. Winson</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!--  TRIBUTES / MESSAGES                                      -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <section id="tributes" class="section tributes-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="gold-line"></div>
+        <span class="section-tag">💬 Tributes</span>
+        <h2 class="section-title">Words from Those He Touched</h2>
+        <div class="gold-line"></div>
+      </div>
+
+      <div class="tributes-grid" id="tributesGrid" data-aos="fade-up">
+        <!-- Existing tributes -->
+        <div class="tribute-card">
+          <div class="tribute-quote-mark">"</div>
+          <p class="tribute-text">Fr. Winson was the kind of priest who made you feel seen, heard, and loved — without ever saying a word. His presence alone was a blessing.</p>
+          <div class="tribute-author">— A Parishioner</div>
+        </div>
+        <div class="tribute-card">
+          <div class="tribute-quote-mark">"</div>
+          <p class="tribute-text">He baptized my children, witnessed my marriage, and gave me last rites to my parents. He was there for every sacred moment. We will never forget him.</p>
+          <div class="tribute-author">— A Family Friend</div>
+        </div>
+        <div class="tribute-card">
+          <div class="tribute-quote-mark">"</div>
+          <p class="tribute-text">His homilies were never long, but they always hit the heart exactly where it needed to be touched. A true shepherd of souls.</p>
+          <div class="tribute-author">— Fellow Clergy</div>
+        </div>
+      </div>
+
+      <!-- Leave a tribute form -->
+      <div class="tribute-form-wrap" data-aos="fade-up">
+        <h3 class="form-title">Leave Your Tribute</h3>
+        <form class="tribute-form" id="tributeForm" onsubmit="submitTribute(event)">
+          <div class="form-row">
+            <input type="text" id="tributeName" placeholder="Your Name" required aria-label="Your name" />
+            <input type="text" id="tributeRelation" placeholder="Relationship (optional)" aria-label="Your relationship" />
+          </div>
+          <textarea id="tributeMessage" placeholder="Share a memory, prayer, or message…" rows="5" required aria-label="Your tribute message"></textarea>
+          <button type="submit" class="btn-gold">Submit Tribute ✦</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!--  FOOTER                                                   -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-cross">✝</div>
+      <h2 class="footer-name">Rev. Fr. Winson Anthony Parekkat</h2>
+      <p class="footer-dates">December 26, 1939 — May 25, 2026</p>
+      <p class="footer-rest">Eternal rest grant unto him, O Lord,<br/>and let perpetual light shine upon him.</p>
+      <div class="footer-divider"></div>
+      <p class="footer-copy">
+        Lovingly built in his memory &nbsp;✝&nbsp;
+        <span id="currentYear"></span>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!--  SCRIPTS                                                  -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
