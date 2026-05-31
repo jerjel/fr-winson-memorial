@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Core features
   initGalleries();   // Load real photos into Swiper carousels
+  initVideos();      // Load YouTube video thumbnails
   initCandles();     // Firebase-backed candle counter
   initTributes();    // Firebase real-time tribute feed
 });
@@ -341,4 +342,72 @@ function escapeHtml(str) {
   const div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  VIDEOS
+// ═══════════════════════════════════════════════════════════════
+
+// Replace these with your actual YouTube video IDs and titles
+const YOUTUBE_VIDEOS = [
+  // Example format: { id: 'dQw4w9WgXcQ', title: 'A Beautiful Homily' }
+];
+
+function initVideos() {
+  const grid = document.getElementById('videoGrid');
+  if (!grid) return;
+
+  if (YOUTUBE_VIDEOS.length === 0) {
+    grid.innerHTML = '<p style="text-align: center; width: 100%; color: var(--color-text-muted); grid-column: 1 / -1;">Videos coming soon...</p>';
+    return;
+  }
+
+  YOUTUBE_VIDEOS.forEach(video => {
+    const card = document.createElement('div');
+    card.className = 'video-card';
+    
+    // YouTube thumbnail URL format
+    const thumbUrl = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
+
+    card.innerHTML = `
+      <div class="video-thumbnail">
+        <img src="${thumbUrl}" alt="${video.title}">
+        <div class="play-button"></div>
+      </div>
+      <div class="video-info">
+        <h4 class="video-title">${video.title}</h4>
+      </div>
+    `;
+
+    card.addEventListener('click', () => openVideoModal(video.id));
+    grid.appendChild(card);
+  });
+
+  // Modal logic
+  const modal = document.getElementById('videoModal');
+  const closeBtn = document.getElementById('closeVideoModal');
+
+  if (closeBtn && modal) {
+    closeBtn.addEventListener('click', closeVideoModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeVideoModal();
+    });
+  }
+}
+
+function openVideoModal(videoId) {
+  const modal = document.getElementById('videoModal');
+  const iframe = document.getElementById('videoIframe');
+  
+  // Autoplay=1 starts the video immediately when modal opens
+  iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+  modal.classList.add('active');
+}
+
+function closeVideoModal() {
+  const modal = document.getElementById('videoModal');
+  const iframe = document.getElementById('videoIframe');
+  
+  modal.classList.remove('active');
+  iframe.src = ''; // Clear source to stop playback
 }

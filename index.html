@@ -46,6 +46,7 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#about">His Life</a></li>
         <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#videos">Videos</a></li>
         <li><a href="#candle">Light a Candle</a></li>
         <li><a href="#tributes">Tributes</a></li>
       </ul>
@@ -455,6 +456,35 @@
 
     </div>
   </section>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!--  VIDEO GALLERY                                            -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <section id="videos" class="section video-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="gold-line"></div>
+        <span class="section-tag">🎥 Memories in Motion</span>
+        <h2 class="section-title">Video Tributes</h2>
+        <div class="gold-line"></div>
+        <p class="section-sub">Cherished moments, speeches, and gatherings.</p>
+      </div>
+
+      <div class="video-grid" id="videoGrid" data-aos="fade-up">
+        <!-- Videos will be populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Modal -->
+  <div id="videoModal" class="video-modal">
+    <div class="video-modal-content">
+      <button class="close-modal" id="closeVideoModal" aria-label="Close video">&times;</button>
+      <div class="video-wrapper">
+        <iframe id="videoIframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
 
   <!-- ══════════════════════════════════════════════════════════ -->
   <!--  SCRIPTURE BANNER                                         -->
