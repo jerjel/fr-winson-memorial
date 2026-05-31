@@ -3,28 +3,30 @@
 //  Uses ES Modules (type="module" on the script tag in index.html)
 // ═══════════════════════════════════════════════════════════════
 
-import { initializeApp }                       from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getFirestore, doc, getDoc, setDoc,
-         updateDoc, increment, collection,
-         addDoc, onSnapshot, orderBy,
-         query, serverTimestamp }              from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {
+  getFirestore, doc, getDoc, setDoc,
+  updateDoc, increment, collection,
+  addDoc, onSnapshot, orderBy,
+  query, serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 // ── Firebase Configuration ───────────────────────────────────
 const firebaseConfig = {
-  apiKey:            "AIzaSyDnlwcSEmMIG0dR44mJ0QdEuVkA5621TQ8",
-  authDomain:        "frwinson-memorial.firebaseapp.com",
-  projectId:         "frwinson-memorial",
-  storageBucket:     "frwinson-memorial.firebasestorage.app",
+  apiKey: "AIzaSyDnlwcSEmMIG0dR44mJ0QdEuVkA5621TQ8",
+  authDomain: "frwinson-memorial.firebaseapp.com",
+  projectId: "frwinson-memorial",
+  storageBucket: "frwinson-memorial.firebasestorage.app",
   messagingSenderId: "912022141411",
-  appId:             "1:912022141411:web:bb983d965610ef07a248d6",
-  measurementId:     "G-RRCNN2KTEJ"
+  appId: "1:912022141411:web:bb983d965610ef07a248d6",
+  measurementId: "G-RRCNN2KTEJ"
 };
 
 const app = initializeApp(firebaseConfig);
-const db  = getFirestore(app);
+const db = getFirestore(app);
 
 // ── Firestore Document References ────────────────────────────
-const statsDocRef    = doc(db, "memorial", "stats");
+const statsDocRef = doc(db, "memorial", "stats");
 const tributesColRef = collection(db, "tributes");
 
 // ═══════════════════════════════════════════════════════════════
@@ -52,9 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
 //  NAVBAR
 // ═══════════════════════════════════════════════════════════════
 function initNavbar() {
-  const navbar    = document.getElementById('navbar');
+  const navbar = document.getElementById('navbar');
   const navToggle = document.getElementById('navToggle');
-  const navLinks  = document.getElementById('navLinks');
+  const navLinks = document.getElementById('navLinks');
 
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 50);
@@ -62,15 +64,15 @@ function initNavbar() {
 
   navToggle.addEventListener('click', () => {
     const open = navLinks.style.display === 'flex';
-    navLinks.style.display          = open ? '' : 'flex';
-    navLinks.style.flexDirection    = 'column';
-    navLinks.style.position         = 'absolute';
-    navLinks.style.top              = '100%';
-    navLinks.style.left             = '0';
-    navLinks.style.width            = '100%';
-    navLinks.style.background       = 'rgba(15,17,21,0.97)';
-    navLinks.style.padding          = '1rem 0';
-    navLinks.style.textAlign        = 'center';
+    navLinks.style.display = open ? '' : 'flex';
+    navLinks.style.flexDirection = 'column';
+    navLinks.style.position = 'absolute';
+    navLinks.style.top = '100%';
+    navLinks.style.left = '0';
+    navLinks.style.width = '100%';
+    navLinks.style.background = 'rgba(15,17,21,0.97)';
+    navLinks.style.padding = '1rem 0';
+    navLinks.style.textAlign = 'center';
     if (open) navLinks.removeAttribute('style');
   });
 }
@@ -96,15 +98,15 @@ function createParticles() {
     const p = document.createElement('div');
     const size = Math.random() * 3 + 1;
     Object.assign(p.style, {
-      position:     'absolute',
-      width:        `${size}px`,
-      height:       `${size}px`,
-      left:         `${Math.random() * 100}%`,
-      top:          `${Math.random() * 100}%`,
-      background:   'rgba(212,175,55,0.6)',
+      position: 'absolute',
+      width: `${size}px`,
+      height: `${size}px`,
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+      background: 'rgba(212,175,55,0.6)',
       borderRadius: '50%',
-      boxShadow:    '0 0 10px rgba(212,175,55,0.8)',
-      animation:    `floatParticle ${Math.random()*10+5}s ease-in-out ${Math.random()*5}s infinite alternate`,
+      boxShadow: '0 0 10px rgba(212,175,55,0.8)',
+      animation: `floatParticle ${Math.random() * 10 + 5}s ease-in-out ${Math.random() * 5}s infinite alternate`,
     });
     container.appendChild(p);
   }
@@ -117,42 +119,42 @@ function createParticles() {
 
 // ── Add your actual file names here as you upload photos ──────
 const PHOTO_MAP = {
-  'early-life':    ['img1.jpg','img2.jpg','img3.jpg','img4.jpg','img5.jpg','img6.jpg','img7.jpg'],
-  'priesthood':    ['Copy of 2.jpg','Copy of 3.jpg','DSCF0033.JPG','IMG_20170706_112644.jpg',
-                    'death_of_ammama.jpg','death_of_valliappapan.jpg','death_of_vellianty.jpg',
-                    'docu0086.jpg','docu0088.jpg','docu0096.jpg','docu0107.jpg'],
-  'ministry':      ['IMG_20170706_112347.jpg','IMG_20170706_112441.jpg','vellippanachan_at_US.jpg',
-                    'vellippanachan_in_us.jpg','vellippanachan_with_his_car_at_US.jpg',
-                    'vellippanachan_with_pastor.jpg'],
-  'family':        ['IMG_20170622_155652.jpg','IMG_20170706_113419.jpg','IMG_20170706_120030.jpg',
-                    'IMG_20170706_120824.jpg','IMG_20170706_120902.jpg',
-                    'abc_with_vellippanachan.jpg','docu0106.jpg'],
-  'celebrations':  ['IMG-20170625-WA0018.jpg','IMG-20170625-WA0019.jpg','IMG-20170625-WA0020.jpg',
-                    'IMG-20170625-WA0077.jpg','Pappas_birthday_4.jpg','Pappas_birthday_6.jpg',
-                    'Vellippanachan_Joel.jpg','Vellippanachan_Joel_1.jpg',
-                    'vellipanachan_bastian_christo.jpg','vellippanachan_jubilee.jpg',
-                    'vellippanachan_on_jubilee.jpg','with_vellippanachan.jpg'],
-  'legacy':        []   // Add legacy photo filenames here when ready
+  'early-life': ['img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg', 'img5.jpg', 'img6.jpg', 'img7.jpg'],
+  'priesthood': ['Copy of 2.jpg', 'Copy of 3.jpg', 'DSCF0033.JPG', 'IMG_20170706_112644.jpg',
+    'death_of_ammama.jpg', 'death_of_valliappapan.jpg', 'death_of_vellianty.jpg',
+    'docu0086.jpg', 'docu0088.jpg', 'docu0096.jpg', 'docu0107.jpg'],
+  'ministry': ['IMG_20170706_112347.jpg', 'IMG_20170706_112441.jpg', 'vellippanachan_at_US.jpg',
+    'vellippanachan_in_us.jpg', 'vellippanachan_with_his_car_at_US.jpg',
+    'vellippanachan_with_pastor.jpg'],
+  'family': ['IMG_20170622_155652.jpg', 'IMG_20170706_113419.jpg', 'IMG_20170706_120030.jpg',
+    'IMG_20170706_120824.jpg', 'IMG_20170706_120902.jpg',
+    'abc_with_vellippanachan.jpg', 'docu0106.jpg'],
+  'celebrations': ['IMG-20170625-WA0019.jpg', 'IMG-20170625-WA0020.jpg',
+    'IMG-20170625-WA0077.jpg', 'Pappas_birthday_4.jpg', 'Pappas_birthday_6.jpg',
+    'Vellippanachan_Joel.jpg', 'Vellippanachan_Joel_1.jpg',
+    'vellipanachan_bastian_christo.jpg', 'vellippanachan_jubilee.jpg',
+    'vellippanachan_on_jubilee.jpg', 'with_vellippanachan.jpg'],
+  'legacy': []   // Add legacy photo filenames here when ready
 };
 
 const CATEGORY_META = [
-  { id: 'early-life',   icon: '🌱', text: 'Early Life'   },
-  { id: 'priesthood',   icon: '✝',  text: 'Priesthood'   },
-  { id: 'ministry',     icon: '🕊️', text: 'Ministry'     },
-  { id: 'family',       icon: '❤️', text: 'Family'       },
+  { id: 'early-life', icon: '🌱', text: 'Early Life' },
+  { id: 'priesthood', icon: '✝', text: 'Priesthood' },
+  { id: 'ministry', icon: '🕊️', text: 'Ministry' },
+  { id: 'family', icon: '❤️', text: 'Family' },
   { id: 'celebrations', icon: '🎉', text: 'Celebrations' },
-  { id: 'legacy',       icon: '🌅', text: 'Legacy'       },
+  { id: 'legacy', icon: '🌅', text: 'Legacy' },
 ];
 
 const SWIPER_OPTS = {
-  effect:        'coverflow',
-  grabCursor:    true,
+  effect: 'coverflow',
+  grabCursor: true,
   centeredSlides: true,
   slidesPerView: 'auto',
   coverflowEffect: { rotate: 20, stretch: 0, depth: 200, modifier: 1, slideShadows: true },
-  pagination:    { el: '.swiper-pagination', clickable: true },
-  navigation:    { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-  loop:          false,
+  pagination: { el: '.swiper-pagination', clickable: true },
+  navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+  loop: false,
 };
 
 function initGalleries() {
@@ -208,9 +210,9 @@ const CANDLE_HTML = `
   </div>`;
 
 async function initCandles() {
-  const grid        = document.getElementById('candleGrid');
-  const litCountEl  = document.getElementById('litCount');
-  const lightBtn    = document.getElementById('lightAllBtn');
+  const grid = document.getElementById('candleGrid');
+  const litCountEl = document.getElementById('litCount');
+  const lightBtn = document.getElementById('lightAllBtn');
 
   // ── Ensure the stats doc exists ──────────────────────────────
   try {
@@ -233,14 +235,14 @@ async function initCandles() {
 
   // ── Light-a-candle button ─────────────────────────────────────
   lightBtn.addEventListener('click', async () => {
-    lightBtn.disabled    = true;
+    lightBtn.disabled = true;
     lightBtn.textContent = 'Lighting…';
     try {
       await updateDoc(statsDocRef, { candleCount: increment(1) });
     } catch (e) {
       console.error('Could not light candle:', e);
     }
-    lightBtn.disabled    = false;
+    lightBtn.disabled = false;
     lightBtn.textContent = 'Light a Candle for Fr. Winson';
   });
 
@@ -251,7 +253,7 @@ async function initCandles() {
 function syncCandleGrid(grid, litCount) {
   // Ensure we always have at least litCount + 2 candles rendered
   const current = grid.querySelectorAll('.candle-item').length;
-  const needed  = Math.max(litCount + 2, 5);
+  const needed = Math.max(litCount + 2, 5);
   for (let i = current; i < needed; i++) addCandleEl(grid, false);
 
   // Illuminate the correct count
@@ -304,17 +306,17 @@ function prependTributeCard(grid, name, relation, message) {
 }
 
 // Exposed globally so the inline onsubmit in index.html can call it
-window.submitTribute = async function(event) {
+window.submitTribute = async function (event) {
   event.preventDefault();
 
-  const btn      = event.target.querySelector('button[type="submit"]');
-  const name     = document.getElementById('tributeName').value.trim();
+  const btn = event.target.querySelector('button[type="submit"]');
+  const name = document.getElementById('tributeName').value.trim();
   const relation = document.getElementById('tributeRelation').value.trim();
-  const message  = document.getElementById('tributeMessage').value.trim();
+  const message = document.getElementById('tributeMessage').value.trim();
 
   if (!name || !message) return;
 
-  btn.disabled    = true;
+  btn.disabled = true;
   btn.textContent = 'Saving…';
 
   try {
@@ -333,7 +335,7 @@ window.submitTribute = async function(event) {
     alert('Sorry, your tribute could not be saved. Please try again.');
   }
 
-  btn.disabled    = false;
+  btn.disabled = false;
   btn.textContent = 'Submit Tribute ✦';
 };
 
@@ -350,7 +352,11 @@ function escapeHtml(str) {
 
 // Replace these with your actual YouTube video IDs and titles
 const YOUTUBE_VIDEOS = [
-  // Example format: { id: 'dQw4w9WgXcQ', title: 'A Beautiful Homily' }
+  { id: 'QIf8MCf8QfI', title: 'Golden Jubilee celebration at Devamatha Thrissur' },
+  { id: 'QIf8MCf8QfI', title: 'Golden Jubilee celebration at Devamatha Thrissur' },
+  { id: 'QIf8MCf8QfI', title: 'Golden Jubilee celebration at Devamatha Thrissur' },
+  { id: 'QIf8MCf8QfI', title: 'Golden Jubilee celebration at Devamatha Thrissur' },
+  { id: 'QIf8MCf8QfI', title: 'Golden Jubilee celebration at Devamatha Thrissur' },
 ];
 
 function initVideos() {
@@ -364,8 +370,8 @@ function initVideos() {
 
   YOUTUBE_VIDEOS.forEach(video => {
     const card = document.createElement('div');
-    card.className = 'video-card';
-    
+    card.className = 'swiper-slide video-card';
+
     // YouTube thumbnail URL format
     const thumbUrl = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
 
@@ -383,6 +389,18 @@ function initVideos() {
     grid.appendChild(card);
   });
 
+  // Initialize Swiper for videos
+  new Swiper('#swiper-videos', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    coverflowEffect: { rotate: 10, stretch: 0, depth: 100, modifier: 1, slideShadows: true },
+    pagination: { el: '#swiper-videos .swiper-pagination', clickable: true },
+    navigation: { nextEl: '#swiper-videos .swiper-button-next', prevEl: '#swiper-videos .swiper-button-prev' },
+    loop: false,
+  });
+
   // Modal logic
   const modal = document.getElementById('videoModal');
   const closeBtn = document.getElementById('closeVideoModal');
@@ -398,7 +416,7 @@ function initVideos() {
 function openVideoModal(videoId) {
   const modal = document.getElementById('videoModal');
   const iframe = document.getElementById('videoIframe');
-  
+
   // Autoplay=1 starts the video immediately when modal opens
   iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
   modal.classList.add('active');
@@ -407,7 +425,7 @@ function openVideoModal(videoId) {
 function closeVideoModal() {
   const modal = document.getElementById('videoModal');
   const iframe = document.getElementById('videoIframe');
-  
+
   modal.classList.remove('active');
   iframe.src = ''; // Clear source to stop playback
 }

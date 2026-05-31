@@ -763,9 +763,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  /* Removed grid display, now controlled by Swiper */
 }
 
 .video-card {
@@ -777,6 +775,8 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid rgba(255,255,255,0.1);
   transition: var(--transition-fast);
   background: #1a1c23;
+  width: 320px; /* Set fixed width for Swiper slides */
+  height: auto;
 }
 
 .video-card:hover {
