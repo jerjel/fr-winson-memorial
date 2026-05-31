@@ -353,10 +353,7 @@ function escapeHtml(str) {
 // Replace these with your actual YouTube video IDs and titles
 const YOUTUBE_VIDEOS = [
   { id: 'QIf8MCf8QfI', title: 'Golden Jubilee celebration at Devamatha Thrissur' },
-  { id: 'QIf8MCf8QfI', title: 'Golden Jubilee celebration at Devamatha Thrissur' },
-  { id: 'QIf8MCf8QfI', title: 'Golden Jubilee celebration at Devamatha Thrissur' },
-  { id: 'QIf8MCf8QfI', title: 'Golden Jubilee celebration at Devamatha Thrissur' },
-  { id: 'QIf8MCf8QfI', title: 'Golden Jubilee celebration at Devamatha Thrissur' },
+  { id: 'KewrI7e6FJo', title: 'Funeral Service of Fr. Winson Parekkat' },
 ];
 
 function initVideos() {
