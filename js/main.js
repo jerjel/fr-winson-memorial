@@ -119,7 +119,8 @@ function createParticles() {
 
 // ── Add your actual file names here as you upload photos ──────
 const PHOTO_MAP = {
-  'early-life': ['img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg', 'img5.jpg', 'img6.jpg', 'img7.jpg'],
+  'early-life': ['img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg', 'img5.jpg', 'img6.jpg',
+    'img7.jpg', 'img8.jpg', 'img9.jpg', 'img10.jpg', 'img11.jpg', 'img12.jpg', 'img13.jpg'],
   'priesthood': ['Copy of 2.jpg', 'Copy of 3.jpg', 'DSCF0033.JPG', 'IMG_20170706_112644.jpg',
     'death_of_ammama.jpg', 'death_of_valliappapan.jpg', 'death_of_vellianty.jpg',
     'docu0086.jpg', 'docu0088.jpg', 'docu0096.jpg', 'docu0107.jpg'],
