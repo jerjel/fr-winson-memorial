@@ -3,7 +3,7 @@ import json
 
 def generate_gallery():
     base_dir = "images"
-    categories = ['early-life', 'priesthood', 'ministry', 'family', 'celebrations', 'legacy']
+    categories = ['early-life', 'ministry', 'celebrations', 'family']
     photo_map = {}
 
     print("Scanning images directory...")
@@ -18,7 +18,7 @@ def generate_gallery():
             ]
             # Sort files naturally/alphabetically
             photo_map[cat] = sorted(files)
-            print(f"  Category '{cat}': found {len(files)} images.")
+            print(f"'{cat}': {photo_map[cat]},")
         else:
             photo_map[cat] = []
             print(f"  Category '{cat}': directory not found, using empty list.")

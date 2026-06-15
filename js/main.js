@@ -119,23 +119,30 @@ function createParticles() {
 
 // ── Add your actual file names here as you upload photos ──────
 const PHOTO_MAP = {
-  'early-life': ['img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg', 'img5.jpg', 'img6.jpg',
-    'img7.jpg', 'img8.jpg', 'img9.jpg', 'img10.jpg', 'img11.jpg', 'img12.jpg', 'img13.jpg'],
-  'priesthood': ['Copy of 2.jpg', 'Copy of 3.jpg', 'DSCF0033.JPG', 'IMG_20170706_112644.jpg',
-    'death_of_ammama.jpg', 'death_of_valliappapan.jpg', 'death_of_vellianty.jpg',
-    'docu0086.jpg', 'docu0088.jpg', 'docu0096.jpg', 'docu0107.jpg'],
-  'ministry': ['IMG_20170706_112347.jpg', 'IMG_20170706_112441.jpg', 'vellippanachan_at_US.jpg',
-    'vellippanachan_in_us.jpg', 'vellippanachan_with_his_car_at_US.jpg',
-    'vellippanachan_with_pastor.jpg'],
-  'family': ['IMG_20170622_155652.jpg', 'IMG_20170706_113419.jpg', 'IMG_20170706_120030.jpg',
-    'IMG_20170706_120824.jpg', 'IMG_20170706_120902.jpg',
-    'abc_with_vellippanachan.jpg', 'docu0106.jpg'],
-  'celebrations': ['IMG-20170625-WA0019.jpg', 'IMG-20170625-WA0020.jpg',
-    'IMG-20170625-WA0077.jpg', 'Pappas_birthday_4.jpg', 'Pappas_birthday_6.jpg',
-    'Vellippanachan_Joel.jpg', 'Vellippanachan_Joel_1.jpg',
-    'vellipanachan_bastian_christo.jpg', 'vellippanachan_jubilee.jpg',
-    'vellippanachan_on_jubilee.jpg', 'with_vellippanachan.jpg'],
-  'legacy': []   // Add legacy photo filenames here when ready
+  'early-life': ['img1.jpg', 'img10.jpg', 'img11.jpg', 'img12.jpg', 'img13.jpg', 'img14.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg', 'img5.jpg', 'img6.jpg', 'img7.jpg', 'img8.jpg', 'img9.jpg'],
+  'ministry': ['001deepti.jpg', '01IMG_20170706_112347.jpg', '03vellippanachan_in_us.jpg', '04vellippanachan_with_his_car_at_US.jpg', '05vellippanachan_with_pastor.jpg', '07001Gemini_.png', '08Gemini_.png', '1-2.jpg', 'DSC_0318.JPG', 'IMG_0784.JPG', 'IMG_2580.jpg', 'IMG_6966_3_11zon.jpg', 'food-1.png', 'g8.jpg', 'holymass.jpg', 'lucyCamera 842.jpg', 'pare-1.png'],
+  'celebrations': ['001vellippanachan_on_jubilee.jpg', '01WhatsApp1.JPG', '02with_vellippanachan.jpg', '03vellippanachan_jubilee.jpg', '04WSM_0380 copy.JPG', '04WhatsApp3.jpeg', '05.jpeg', '15AP5A6463.JPG', 'AP5A6450.JPG', 'WhatsApp2.jpeg', 'zzIMG_0100.jpg', 'zz02vellippanachan_at_US (1).jpg', 'zz03vellippanachan_at_US (2).jpg', 'zz04vellippanachan_at_US (3).jpg', 'zzDSCF0008.JPG', 'zzDSCF0019.JPG', 'zzDSC_0518.JPG', 'zzaDSCF0023.JPG'],
+  'family': ['00114IMG_0142.jpg', '01IMG_20170706_120030.png', '02death_of_valliappapan.jpg', '03docu0106.jpg', '04death_of_vellianty.jpg', '05IMG_20170706_120902.jpg', '06IMG_20170706_120824.jpg', '07death_of_ammama.jpg', '09IMG_20170706_113419.jpg', '10Vellippanachan_Joel.jpg', '11Pappas_birthday_6.jpg', '12vellipanachan_bastian_christo.jpg', '13Vellippanachan_Joel_1.jpg', '16What.jpeg', '17Gemini.png', '18Gemini.png', 'AP5A6479.JPG', 'At _Ooty.jpg', 'DSC_0221.JPG', 'Gemini_Generated_Image_pmujq7pmujq7pmuj.png', 'IMG-20170625-WA0019.jpg', 'IMG-20170625-WA0077.jpg', 'IMG_6127.jpg'],
+
+
+  // 'early-life': ['img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg', 'img5.jpg', 'img6.jpg',
+  //   'img7.jpg', 'img8.jpg', 'img9.jpg', 'img1₀.jpg', 'img₁₁.jpg', 'img₁₂.jpg', 'img₁₃.jpg'],
+  // 'priesthood': ['Copy of ２.jpg', 'Copy of ３.jpg', 'DSCF₀₀₃₃.JPG', 'IMG_２０１７０７０６_１１２６４４.jpg',
+
+  //   'death_of_ammama.jpg', 'death_of_valliappapan.jpg', 'death_of_vellianty.jpg',
+  //   'docu0086.jpg', 'docu0088.jpg', 'docu0096.jpg', 'docu0107.jpg'],
+  // 'ministry': ['IMG_20170706_112347.jpg', 'IMG_20170706_112441.jpg', 'vellippanachan_at_US.jpg',
+  //   'vellippanachan_in_us.jpg', 'vellippanachan_with_his_car_at_US.jpg',
+  //   'vellippanachan_with_pastor.jpg'],
+  // 'family': ['IMG_20170622_155652.jpg', 'IMG_20170706_113419.jpg', 'IMG_20170706_120030.jpg',
+  //   'IMG_20170706_120824.jpg', 'IMG_20170706_120902.jpg',
+  //   'abc_with_vellippanachan.jpg', 'docu0106.jpg'],
+  // 'celebrations': ['IMG-20170625-WA0019.jpg', 'IMG-20170625-WA0020.jpg',
+  //   'IMG-20170625-WA0077.jpg', 'Pappas_birthday_4.jpg', 'Pappas_birthday_6.jpg',
+  //   'Vellippanachan_Joel.jpg', 'Vellippanachan_Joel_1.jpg',
+  //   'vellipanachan_bastian_christo.jpg', 'vellippanachan_jubilee.jpg',
+  //   'vellippanachan_on_jubilee.jpg', 'with_vellippanachan.jpg'],
+  // 'legacy': []   // Add legacy photo filenames here when ready
 };
 
 const CATEGORY_META = [
